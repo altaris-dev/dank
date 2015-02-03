@@ -1,0 +1,9 @@
+<project name="dank.makejar" default="makejar">
+    <target name="makejar" description="Create a jar for the dank project">
+        <jar jarfile= "./build/DankWeed-${build_no}.jar" basedir="./DankWeed" includes="plugin.yml">
+            <fileset dir="DankWeed/bin/">
+                <include name="**/*.class" />
+            </fileset>
+        </jar>
+    </target>
+</project>
