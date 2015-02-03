@@ -10,6 +10,8 @@ public class Main extends JavaPlugin {
 	public ItemRecipes ir = new ItemRecipes();
 	
 	public void onEnable(){
+		new DrugItemDeclaration();
+		new ItemRecipes();
 		ShapedRecipe craftW = ir.craftW();
 		Bukkit.addRecipe(craftW);
 	}
