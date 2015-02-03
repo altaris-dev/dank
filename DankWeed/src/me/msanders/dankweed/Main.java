@@ -10,8 +10,18 @@ public class Main extends JavaPlugin {
 	public ItemRecipes ir = new ItemRecipes();
 	
 	public void onEnable(){
-		new DrugItemDeclaration();
-		new ItemRecipes();
+		try {
+			did.getClass().newInstance();
+		} catch (InstantiationException | IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			ir.getClass().newInstance();
+		} catch (InstantiationException | IllegalAccessException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		ShapedRecipe craftW = ir.craftW();
 		Bukkit.addRecipe(craftW);
 	}
