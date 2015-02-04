@@ -10,6 +10,18 @@ public class Main extends JavaPlugin {
 	public static ItemRecipes ir = new ItemRecipes();
 	
 	public void onEnable(){
+		try {
+			this.getClass().getClassLoader().loadClass(did.getClass().getName());
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			this.getClass().getClassLoader().loadClass(ir.getClass().getName());
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		ShapedRecipe craftW = ir.craftW();
 		Bukkit.addRecipe(craftW);
 	}
